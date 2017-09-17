@@ -1,1 +1,1 @@
-ds update --replicas 20 marines
+docker service update --replicas 20 marines
