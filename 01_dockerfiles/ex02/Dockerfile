@@ -1,3 +1,6 @@
 FROM ruby
-RUN apt-get update && apt-get upgrade -y && gem install rails -v 5.0.2 && rails new server && cd server && bundle && rake db:migrage && rake db:seed
+RUN apt-get update && apt-get upgrade -y && \
+    gem install rails bundler && mkdir -p /opt/app
+ADD . /opt/app
 WORKDIR /opt/app
+EXPOSE 3000
